@@ -1,0 +1,31 @@
+.card-wrapper {
+	background-color: blue;
+	width: 300px;
+	height: 300px;
+	top: 50%;
+	left: 50%;
+  position: fixed;
+	margin-top: -150px;
+  margin-left: -150px;
+}
+
+.card {
+	background-color: red;
+	width: 100px;
+	height: 100px;
+	top: 50%;
+	left: 50%;
+	position: fixed;
+	margin-top: -50px;
+	margin-left: -50px;
+	transition-duration: 2s;
+}
+
+.card:hover {
+	transition-duration: 2s;
+	transform: rotate(45deg);
+}
+
+body {
+	margin: 0px;
+}
