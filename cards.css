@@ -7,6 +7,7 @@
   position: fixed;
 	margin-top: -150px;
   margin-left: -150px;
+  perspective: 100px;
 }
 
 .card {
@@ -18,12 +19,13 @@
 	position: fixed;
 	margin-top: -50px;
 	margin-left: -50px;
-	transition-duration: 2s;
+	transition-duration: 2s;	
+	transform: rotateY(45deg);
 }
 
 .card:hover {
 	transition-duration: 2s;
-	transform: rotate(45deg);
+	transform: rotateY(0deg);
 }
 
 body {
