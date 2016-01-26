@@ -10,3 +10,9 @@ function cardCreator() {
 	cardCounterOld = cardCounter;
 	cardCounter = cardCounter + 1;
 }
+
+window.onload = function(){ 
+  document.getElementById('card-creator').onclick = function() {
+    console.log('Oi');
+	};
+};
