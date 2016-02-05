@@ -1,0 +1,10 @@
+#card-creator{
+	background-color: red;
+	width: 70px;
+	height: 20px;
+	border-radius: 5px;
+}
+
+body {
+	margin: 0px;
+}
