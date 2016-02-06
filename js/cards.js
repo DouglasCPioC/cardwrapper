@@ -87,12 +87,13 @@ window.onload = function() {
 
 	$('#card-creator').click(function() {
 		screenEngine.addCard(card);
+		$('.card')[0].style.transform = 'rotateY(45deg)';
 		$('.card').hover(function() {
 			$(this)[0].style.transitionDuration = '2s';
-			$(this)[0].style.transform = 'rotateY(45deg)';
+			$(this)[0].style.transform = 'rotateY(0deg)';
 			}, function() {
 			$(this)[0].style.transitionDuration = '2s';
-			$(this)[0].style.transform = 'rotateY(0deg)';
+			$(this)[0].style.transform = 'rotateY(45deg)';
 		});
 	});
 
