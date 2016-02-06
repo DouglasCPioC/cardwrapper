@@ -82,15 +82,18 @@ function Engine(context, options) {
 // For test
 window.onload = function() {
 	wrapperObject = new Wrapper();
-	engineScreen = new Engine(wrapperObject, {});
+	screenEngine = new Engine(wrapperObject, {});
 	card = new Card();
-	engineScreen.addCard(card);
-	
-	$('.card').hover(function() {
-		$(this)[0].style.transitionDuration = '2s';
-		$(this)[0].style.transform = 'rotateY(45deg)';
-	}, function() {
-		$(this)[0].style.transitionDuration = '2s';
-		$(this)[0].style.transform = 'rotateY(0deg)';
+
+	$('#card-creator').click(function() {
+		screenEngine.addCard(card);
+		$('.card').hover(function() {
+			$(this)[0].style.transitionDuration = '2s';
+			$(this)[0].style.transform = 'rotateY(45deg)';
+			}, function() {
+			$(this)[0].style.transitionDuration = '2s';
+			$(this)[0].style.transform = 'rotateY(0deg)';
+		});
 	});
+
 }
