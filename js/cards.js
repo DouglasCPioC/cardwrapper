@@ -87,7 +87,7 @@ window.onload = function() {
 
 	$('#card-creator').click(function() {
 		screenEngine.addCard(card);
-		$('.card')[0].style.transform = 'rotateY(45deg)';
+		$('#' + card.name + '-' + (cardCounter - 1) )[0].style.transform = 'rotateY(45deg)';
 		$('.card').hover(function() {
 			$(this)[0].style.transitionDuration = '2s';
 			$(this)[0].style.transform = 'rotateY(0deg)';
@@ -96,5 +96,4 @@ window.onload = function() {
 			$(this)[0].style.transform = 'rotateY(45deg)';
 		});
 	});
-
 }
