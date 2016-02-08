@@ -92,19 +92,7 @@ function DynamicSpacing() {
 	}
 }
 
-function Engine(context, options) {
-	this.wrapperObj = context;
-	this.parametersObj = options;
-	this.addCard = addCard;
-	this.DynamicSpacing = DynamicSpacing;
-}
-
-// For test
-window.onload = function() {
-	wrapperObject = new Wrapper();
-	screenEngine = new Engine(wrapperObject, {});
-	card = new Card();
-
+function ScreenUpdate() {
 	$('#card-creator').click(function() {
 		screenEngine.addCard(card);
 		$('#' + card.name + '-' + (cardCounter - 1) )[0].style.transitionDuration = '2s';
@@ -117,4 +105,20 @@ window.onload = function() {
 			$(this)[0].style.transform = 'rotateY(45deg)';
 		});
 	});
+}
+
+function Engine(context, options) {
+	this.wrapperObj = context;
+	this.optionsObj = options;
+	this.addCard = addCard;
+	this.DynamicSpacing = DynamicSpacing;
+	this.ScreenUpdate = ScreenUpdate;
+	ScreenUpdate();
+}
+
+// For test
+window.onload = function() {
+	wrapperObject = new Wrapper();
+	screenEngine = new Engine(wrapperObject, {});
+	card = new Card();
 }
