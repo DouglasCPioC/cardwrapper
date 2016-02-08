@@ -61,15 +61,15 @@ function addCard(cardObject) {
 	this.divCard = document.createElement('div');
 	this.divCard.className = cardObject.name;
 	this.divCard.id = cardObject.name + '-' + cardCounter;
-	document.getElementsByClassName('card-wrapper')[0].appendChild(this.divCard);
-	document.getElementById(cardObject.name + '-' + cardCounter).style.width = cardObject.getWidth();
-	document.getElementById(cardObject.name + '-' + cardCounter).style.height = cardObject.getHeight();
-	document.getElementById(cardObject.name + '-' + cardCounter).style.background = 'red';
-	document.getElementById(cardObject.name + '-' + cardCounter).style.position = 'fixed';
-	document.getElementById(cardObject.name + '-' + cardCounter).style.top = '50%';
-	document.getElementById(cardObject.name + '-' + cardCounter).style.left = '50%';
-	document.getElementById(cardObject.name + '-' + cardCounter).style.marginTop = '-50px';
-	document.getElementById(cardObject.name + '-' + cardCounter).style.marginLeft = '-50px';
+	$('.card-wrapper')[0].appendChild(this.divCard);
+	$('#' + cardObject.name + '-' + cardCounter)[0].style.width = cardObject.getWidth();
+	$('#' + cardObject.name + '-' + cardCounter)[0].style.height = cardObject.getHeight();
+	$('#' + cardObject.name + '-' + cardCounter)[0].style.background = 'red';
+	$('#' + cardObject.name + '-' + cardCounter)[0].style.position = 'fixed';
+	$('#' + cardObject.name + '-' + cardCounter)[0].style.top = '50%';
+	$('#' + cardObject.name + '-' + cardCounter)[0].style.left = '50%';
+	$('#' + cardObject.name + '-' + cardCounter)[0].style.marginTop = '-50px';
+	$('#' + cardObject.name + '-' + cardCounter)[0].style.marginLeft = '-50px';
 	cardCounter = cardCounter + 1;
 }
 
