@@ -70,13 +70,33 @@ function addCard(cardObject) {
 	$('#' + cardObject.name + '-' + cardCounter)[0].style.left = '50%';
 	$('#' + cardObject.name + '-' + cardCounter)[0].style.marginTop = '-50px';
 	$('#' + cardObject.name + '-' + cardCounter)[0].style.marginLeft = '-50px';
+	this.DynamicSpacing();
 	cardCounter = cardCounter + 1;
+}
+
+function DynamicSpacing() {
+	var factor;
+	var leftValue;
+	for(i = 0; i <= cardCounter; i++) {
+		factor = ((150 / (cardCounter + 1)) / 300) * 100;
+		if(i < (cardCounter + 1) / 2 && cardCounter != 0) {
+			leftValue = 50 - factor * ( (i % (cardCounter == 0 ? 1 : cardCounter) ) / 2);
+			$('#card-' + i)[0].style.top = '50%';
+			$('#card-' + i)[0].style.left = leftValue + '%';
+		}
+		else {
+			leftValue = 50 + factor * ( (i % (cardCounter == 0 ? 1 : cardCounter) ) / 2);
+			$('#card-' + i)[0].style.top = '50%';
+			$('#card-' + i)[0].style.left = leftValue + '%';
+		}
+	}
 }
 
 function Engine(context, options) {
 	this.wrapperObj = context;
 	this.parametersObj = options;
 	this.addCard = addCard;
+	this.DynamicSpacing = DynamicSpacing;
 }
 
 // For test
@@ -87,6 +107,7 @@ window.onload = function() {
 
 	$('#card-creator').click(function() {
 		screenEngine.addCard(card);
+		$('#' + card.name + '-' + (cardCounter - 1) )[0].style.transitionDuration = '2s';
 		$('#' + card.name + '-' + (cardCounter - 1) )[0].style.transform = 'rotateY(45deg)';
 		$('.card').hover(function() {
 			$(this)[0].style.transitionDuration = '2s';
