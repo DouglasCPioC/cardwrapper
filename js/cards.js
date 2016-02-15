@@ -1,28 +1,28 @@
-function getWidth() {
-	return this.width;
-}
-
-function setWidth(valeu) {
-	this.width = value;
-}
-
-function getHeight() {
-	return this.height;
-}
-
-function setHeight(value) {
-	this.height = value;
-}
-
 // Work correctly
 function Card() {
-	this.name = 'card';
+	this.name = 'card';	
 	this.width = "100px";
 	this.height = "100px";
 	this.getWidth = getWidth;
 	this.setWidth = setWidth;
 	this.getHeight = getHeight;
 	this.setHeight = setHeight;
+
+	function getWidth() {
+		return this.width;
+	}
+
+	function setWidth(valeu) {
+	this.width = value;
+	}
+
+	function getHeight() {
+		return this.height;
+	}
+
+	function setHeight(value) {
+		this.height = value;
+	}
 }
 
 // Work correctly
@@ -52,7 +52,23 @@ function Wrapper() {
 	this.getHeight = getHeight;
 	this.setHeight = setHeight;
 	this.draw = draw;
-	this.draw()
+	this.draw();
+
+	function getWidth() {
+		return this.width;
+	}
+
+	function setWidth(valeu) {
+	this.width = value;
+	}
+
+	function getHeight() {
+		return this.height;
+	}
+
+	function setHeight(value) {
+		this.height = value;
+	}
 }
 
 // Work correctly
